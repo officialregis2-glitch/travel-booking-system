@@ -1,0 +1,41 @@
+{
+  "name": "travel-booking-frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "electron-runner.js",  
+  "scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview",
+  "electron:dev": "cross-env NODE_ENV=development concurrently \"vite\" \"wait-on http://localhost:5173 && electron electron-runner.js\"",
+  "electron:build": "vite build && cross-env NODE_ENV=production electron-builder"
+},
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "build": {
+    "appId": "com.travelagency.booking",
+    "productName": "Booking suit System",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "electron-runner.js",
+      "package.json"
+    ],
+    "win": {
+      "target": ["nsis"],
+      "icon": "src/assets/logo.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Booking suit System"
+    }
+  }
+}

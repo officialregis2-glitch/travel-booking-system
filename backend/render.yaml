@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: travel-booking-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: CLIENT_URL
+        value: "*"
+      - key: ZOHO_USER
+        sync: false
+      - key: ZOHO_APP_PASSWORD
+        sync: false
+      - key: EMAIL_1
+        sync: false
+      - key: EMAIL_2
+        sync: false
