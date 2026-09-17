@@ -4,9 +4,10 @@
   "description": "Travel Booking Management System - Backend",
   "main": "server.js",
   "type": "module",
- "scripts": {
+"scripts": {
   "dev": "nodemon server.js",
-  "start": "node server.js"
+  "start": "node server.js",
+  "postinstall": "npm audit fix --force || true" 
 },
   "dependencies": {
     "bcryptjs": "^2.4.3",
